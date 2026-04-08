@@ -1,16 +1,28 @@
-# React + Vite
+## Étapes du Projet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Étape 1 : Le 09 Avril
+* **Gestion de projet :** Créer un repo GitHub pour le projet.
+* **Planification :** Rédiger les User Stories en utilisant l'outil collaboratif de votre choix (GitHub, Notion, Trello, etc.). 
+* **Détails des tâches :** Chaque User Story doit inclure un ordre de priorité, un statut d'avancement et une estimation de temps.
+* **Initialisation :** Initialiser le projet React.
+* **Structure :** Mettre en place une bonne architecture de projet.
+* **Design :** Commencer l'intégration pour obtenir un rendu visuel proche de la maquette UX/UI.
 
-Currently, two official plugins are available:
+### Étape 2 : Le 16 Avril
+* **Design :** Finaliser l'intégration visuelle de l'application.
+* **Développement :** Débuter l'implémentation des différentes fonctionnalités.
+* **Données :** Travailler avec des données mockées à ce stade de développement.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Étape 3 : Le 25 Avril
+* **Développement :** Poursuivre et approfondir l'implémentation des fonctionnalités.
+* **Données :** Connecter l'application à l'API pour utiliser de vraies données.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Étape 4 : Le 30 Avril (Rendu final et soutenance)
+* **Finalisation :** Achever l'implémentation de toutes les fonctionnalités requises.
+* **Mise en ligne :** Déployer le projet sur une plateforme d'hébergement (Heroku, Netlify ou équivalent).
+* **Soutenance - Présentation (10-15 minutes) :**
+    * Rappel du contexte initial et listing des User Stories / fonctionnalités.
+    * Démonstration et présentation de l'application.
+    * Présentation de l'architecture et du code.
+    * Bilan global sur l'avancement du projet final.
+* **Soutenance - Échange (10 minutes) :** Session de questions/réponses avec le jury.
