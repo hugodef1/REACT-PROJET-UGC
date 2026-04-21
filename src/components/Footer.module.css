@@ -1,0 +1,82 @@
+.footer {
+  background-color: #000B4D;
+  color: white;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.topSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.socials {
+  display: flex;
+  gap: 20px;
+}
+
+.socialIcon {
+  height: 24px;
+  width: auto;
+  transition: transform 0.2s;
+}
+
+.socialIcon:hover {
+  transform: scale(1.1);
+}
+
+.footerLogo {
+  height: 30px;
+  opacity: 0.8;
+}
+
+/* Grille de liens principaux */
+.mainNav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px 25px;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.mainNav a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.mainNav a:hover {
+  text-decoration: underline;
+}
+
+/* Liens du bas (plus petits et discrets) */
+.secondaryNav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.secondaryNav a {
+  color: white;
+  text-decoration: none;
+  font-size: 11px;
+  opacity: 0.6;
+}
+
+.secondaryNav a:hover {
+  opacity: 1;
+}

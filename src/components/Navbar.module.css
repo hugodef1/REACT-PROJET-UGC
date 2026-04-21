@@ -1,0 +1,93 @@
+/* Le conteneur principal */
+.header {
+  display: flex;
+  align-items: center; /* Aligne tout verticalement au centre */
+  justify-content: space-between; /* Écarte les 3 zones au maximum */
+  background-color: #000B4D;
+  padding: 15px 40px;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* --- ZONE 1 : LOGO --- */
+.logoContainer {
+  flex: 1; /* Prend 1/3 de l'espace */
+}
+
+.logoText {
+  color: white;
+  margin: 0;
+  font-size: 32px;
+  font-style: italic;
+  text-decoration: none;
+}
+
+/* --- ZONE 2 : RECHERCHE --- */
+.searchContainer {
+  flex: 1.5; /* Prend un peu plus de place que les côtés */
+  display: flex;
+  justify-content: center;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  background-color: #1cb3de; /* Le bleu clair de ta maquette */
+  border-radius: 25px; /* Arrondit les bords */
+  padding: 10px 20px;
+  width: 100%;
+  max-width: 450px;
+}
+
+.searchIcon {
+  margin-right: 10px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.searchInput {
+  border: none;
+  background: transparent; /* Rend le fond transparent pour voir le bleu */
+  color: white;
+  width: 100%;
+  outline: none; /* Enlève la bordure moche quand on clique dessus */
+  font-size: 14px;
+}
+
+.searchInput::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- ZONE 3 : NAVIGATION --- */
+.navMenu {
+  flex: 1; /* Prend 1/3 de l'espace */
+  display: flex;
+  justify-content: flex-end; /* Pousse les icônes tout à droite */
+  gap: 30px; /* L'espace entre chaque icône */
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column; /* Superpose l'icône et le texte */
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: bold;
+  transition: color 0.3s ease; /* Petite animation fluide au survol */
+}
+
+.navItem:hover {
+  color: #1cb3de; /* Change de couleur quand on passe la souris */
+}
+
+.iconImage {
+  height: 24px; /* Tu peux augmenter ou réduire cette valeur si les icônes sont trop petites/grandes */
+  width: auto;
+  margin-bottom: 5px; /* Garde un petit espace entre l'icône et le texte */
+}
+
+/* Je te remets la classe du logo au cas où tu ne l'aurais pas mise */
+.logoImage {
+  height: 40px; 
+  width: auto;
+}

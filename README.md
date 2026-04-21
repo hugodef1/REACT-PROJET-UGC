@@ -13,11 +13,11 @@
 * **Développement :** Débuter l'implémentation des différentes fonctionnalités.
 * **Données :** Travailler avec des données mockées à ce stade de développement.
 
-### Étape 3 : Le 25 Avril
+### Étape 3 : Le 24 Avril
 * **Développement :** Poursuivre et approfondir l'implémentation des fonctionnalités.
 * **Données :** Connecter l'application à l'API pour utiliser de vraies données.
 
-### Étape 4 : Le 30 Avril (Rendu final et soutenance)
+### Étape 4 : Le 29 Avril (Rendu final et soutenance)
 * **Finalisation :** Achever l'implémentation de toutes les fonctionnalités requises.
 * **Mise en ligne :** Déployer le projet sur une plateforme d'hébergement (Heroku, Netlify ou équivalent).
 * **Soutenance - Présentation (10-15 minutes) :**
