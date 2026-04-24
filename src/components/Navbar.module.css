@@ -1,30 +1,31 @@
-/* Le conteneur principal */
-.header {
+/* =========================================
+   VERSION ORDINATEUR (TOP NAVBAR)
+========================================= */
+.desktopNavbar {
   display: flex;
-  align-items: center; /* Aligne tout verticalement au centre */
-  justify-content: space-between; /* Écarte les 3 zones au maximum */
+  align-items: center;
+  justify-content: space-between;
   background-color: #000B4D;
   padding: 15px 40px;
   color: white;
   font-family: Arial, sans-serif;
+  /* Garde la barre visible en haut lors du scroll */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* --- ZONE 1 : LOGO --- */
 .logoContainer {
-  flex: 1; /* Prend 1/3 de l'espace */
+  flex: 1;
 }
 
-.logoText {
-  color: white;
-  margin: 0;
-  font-size: 32px;
-  font-style: italic;
-  text-decoration: none;
+.logoImage {
+  height: 40px;
+  width: auto;
 }
 
-/* --- ZONE 2 : RECHERCHE --- */
 .searchContainer {
-  flex: 1.5; /* Prend un peu plus de place que les côtés */
+  flex: 1.5;
   display: flex;
   justify-content: center;
 }
@@ -32,8 +33,8 @@
 .searchBar {
   display: flex;
   align-items: center;
-  background-color: #1cb3de; /* Le bleu clair de ta maquette */
-  border-radius: 25px; /* Arrondit les bords */
+  background-color: #1cb3de;
+  border-radius: 25px;
   padding: 10px 20px;
   width: 100%;
   max-width: 450px;
@@ -46,10 +47,10 @@
 
 .searchInput {
   border: none;
-  background: transparent; /* Rend le fond transparent pour voir le bleu */
+  background: transparent;
   color: white;
   width: 100%;
-  outline: none; /* Enlève la bordure moche quand on clique dessus */
+  outline: none;
   font-size: 14px;
 }
 
@@ -57,37 +58,126 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* --- ZONE 3 : NAVIGATION --- */
 .navMenu {
-  flex: 1; /* Prend 1/3 de l'espace */
+  flex: 1;
   display: flex;
-  justify-content: flex-end; /* Pousse les icônes tout à droite */
-  gap: 30px; /* L'espace entre chaque icône */
+  justify-content: flex-end;
+  gap: 30px;
 }
 
 .navItem {
   display: flex;
-  flex-direction: column; /* Superpose l'icône et le texte */
+  flex-direction: column;
   align-items: center;
   color: white;
   text-decoration: none;
   font-size: 11px;
   font-weight: bold;
-  transition: color 0.3s ease; /* Petite animation fluide au survol */
+  transition: color 0.3s ease;
 }
 
 .navItem:hover {
-  color: #1cb3de; /* Change de couleur quand on passe la souris */
+  color: #1cb3de;
 }
 
 .iconImage {
-  height: 24px; /* Tu peux augmenter ou réduire cette valeur si les icônes sont trop petites/grandes */
+  height: 24px;
   width: auto;
-  margin-bottom: 5px; /* Garde un petit espace entre l'icône et le texte */
+  margin-bottom: 5px;
 }
 
-/* Je te remets la classe du logo au cas où tu ne l'aurais pas mise */
-.logoImage {
-  height: 40px; 
-  width: auto;
+/* La barre mobile est cachée par défaut sur les grands écrans */
+.mobileNavbar {
+  display: none;
+}
+
+
+/* =========================================
+   VERSION MOBILE (BOTTOM NAVBAR PREMIUM)
+========================================= */
+@media (max-width: 768px) {
+  
+  /* On cache la barre du haut sur mobile */
+  .desktopNavbar {
+    display: none;
+  }
+
+  /* On affiche la barre du bas avec son dégradé et sa grille à 5 colonnes */
+  .mobileNavbar {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 colonnes parfaitement égales */
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 75px; /* Hauteur de la barre */
+    
+    /* Dégradé gris/métallique glossy de la maquette */
+    background: linear-gradient(180deg, rgba(100, 105, 115, 0.95) 0%, rgba(20, 25, 35, 0.98) 100%);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+  }
+
+  .mobileNavItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 9px;
+    font-weight: bold;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
+
+  .mobileNavItem:hover, .mobileNavItem:active {
+    opacity: 1;
+  }
+
+  .mobileNavItem img {
+    height: 24px;
+    margin-bottom: 5px;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.5));
+  }
+
+  /* --- LE BOUTON CENTRAL BLEU (SQUIRCLE) --- */
+  .mobileSearchWrapper {
+    display: flex;
+    justify-content: center;
+    position: relative; /* Permet au bouton de s'échapper vers le haut */
+    width: 100%;
+    height: 100%;
+  }
+
+  .mobileSearchBtn {
+    position: absolute;
+    top: -25px; /* Fait dépasser le bouton de la barre */
+    width: 58px;
+    height: 58px;
+    background-color: #1cb3de;
+    border-radius: 18px; /* Effet "Squircle" (carré très arrondi) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    
+    /* Effet 3D glossy */
+    box-shadow: 
+      0 6px 15px rgba(28, 179, 222, 0.4), 
+      inset 0 2px 5px rgba(255, 255, 255, 0.5);
+    transition: transform 0.1s;
+  }
+
+  .mobileSearchBtn:active {
+    transform: scale(0.95); /* Petit effet d'enfoncement au clic */
+  }
+
+  .searchIconMobile {
+    font-size: 24px;
+    color: #000B4D; /* L'icône en foncé pour le contraste */
+  }
 }
