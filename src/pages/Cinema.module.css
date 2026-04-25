@@ -185,10 +185,6 @@
   .headerTitles, .filtersRow {
     max-width: 1000px;
   }
-  
-  .headerTitles {
-    text-align: center;
-  }
 
   .filtersRow {
     justify-content: center;

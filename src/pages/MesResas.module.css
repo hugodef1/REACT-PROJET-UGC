@@ -1,0 +1,66 @@
+.mesResasContainer {
+  background-color: #000B4D;
+  min-height: 100vh;
+  padding: 30px 20px 100px 20px; /* Le 100px en bas est toujours là pour la Navbar mobile ! */
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin-bottom: 25px;
+}
+
+.mainTitle {
+  font-size: 24px;
+  margin: 0 0 5px 0;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+/* --- COMPTEURS --- */
+.statsContainer {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.statBox {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.statNumber {
+  font-size: 24px;
+  font-weight: 800;
+  color: #86bfff;
+  margin-bottom: 5px;
+}
+
+.statLabel {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* --- LISTE DES RÉSERVATIONS --- */
+.reservationsList {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}

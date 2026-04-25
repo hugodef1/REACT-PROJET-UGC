@@ -37,7 +37,7 @@ function Navbar() {
 
         {/* MENU NAVIGATION */}
         <nav className={styles.navMenu}>
-          <Link to="/films" className={styles.navItem}>
+          <Link to="" className={styles.navItem}>
             <img src={filmsIcon} alt="Films" className={styles.iconImage} />
             <span>FILMS</span>
           </Link>
@@ -62,7 +62,7 @@ function Navbar() {
       ======================================= */}
       <nav className={styles.mobileNavbar}>
         
-        <Link to="/films" className={styles.mobileNavItem}>
+        <Link to="" className={styles.mobileNavItem}>
           <img src={filmsIcon} alt="Films" />
           <span>FILMS</span>
         </Link>
