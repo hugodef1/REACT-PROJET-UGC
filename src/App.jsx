@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer'; 
 import Home from './pages/Home';
 import Cinema from './pages/Cinema';
+import MesResas from './pages/MesResas';
 import './App.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cinemas" element={<Cinema />} /> 
+          <Route path="/reservations" element={<MesResas />} />
         </Routes>
       </main>
 
