@@ -2,8 +2,6 @@ import styles from './MesResas.module.css';
 import ReservationCard from '../components/ReservationCard';
 
 function MesResas() {
-  // Ici, tu pourrais plus tard faire un fetch() vers TON API pour récupérer les réservations de l'utilisateur.
-  // Pour l'instant, on simule ces données, en utilisant des images TMDB pour rester cohérent avec ta page d'accueil.
   const reservations = [
     {
       id: 1,

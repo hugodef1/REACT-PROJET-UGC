@@ -1,0 +1,177 @@
+.compteContainer {
+  background-color: #000B4D;
+  min-height: 100vh;
+  padding: 40px 20px 100px 20px; /* 100px en bas pour la Navbar mobile */
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================================
+   STYLE DE L'ACCUEIL DU COMPTE
+================================ */
+.headerCompte {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.settingsBtn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.sectionSubtitle {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.actionGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.actionCard {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  color: white;
+  text-align: left;
+  flex: 1 1 45%; /* Prend environ la moitié de l'écran */
+  height: 120px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.actionCard:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.fullWidth {
+  flex: 1 1 100%; /* Prend toute la largeur */
+}
+
+.cardIcon {
+  font-size: 24px;
+}
+
+.cardText {
+  font-size: 13px;
+  font-weight: bold;
+  opacity: 0.9;
+}
+
+/* ================================
+   STYLE DE LA WATCHLIST
+================================ */
+.headerWatchlist {
+  margin-bottom: 20px;
+}
+
+.backBtn {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+.filterContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.filterPill {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #1CB3DE; /* Bordure bleue */
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  width: 80%;
+  max-width: 300px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.pillLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pillCount {
+  opacity: 0.7;
+}
+
+.moviesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.movieCard {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 2 / 3;
+}
+
+.poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Le bouton moins rouge flottant */
+.removeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fb2c36; /* Rouge */
+  font-size: 14px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
