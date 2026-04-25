@@ -1,0 +1,237 @@
+.container {
+  background-color: #000B4D;
+  min-height: 100vh;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding-bottom: 100px;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, #0d1a6e, #071040);
+  padding: 30px 15px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.greeting {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.greetingTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.settingsBtn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.greetingSub {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.5);
+  font-weight: bold;
+}
+
+/* MENU PRINCIPAL */
+.mainMenu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 15px;
+}
+
+.menuBtn {
+  background: linear-gradient(135deg, #0d1a6e, #071040);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: white;
+  border-radius: 14px;
+  padding: 18px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.menuBtn:last-child {
+  grid-column: 1 / -1;
+}
+
+.menuBtnActive {
+  background: rgba(28, 179, 222, 0.2);
+  border-color: #1cb3de;
+}
+
+.menuIcon { font-size: 22px; }
+
+/* CARTE UGC */
+.carteSection {
+  padding: 5px 15px 20px;
+}
+
+.carteUgc {
+  background: linear-gradient(135deg, #1cb3de, #0a4fa0);
+  border-radius: 16px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.carteUgc::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+}
+
+.carteUgc::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  right: 30px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+}
+
+.carteHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.carteLogo {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: white;
+}
+
+.carteType {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background: rgba(255,255,255,0.2);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.carteBody { position: relative; z-index: 1; }
+
+.carteName {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 5px;
+}
+
+.carteNum {
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin: 0 0 4px;
+  opacity: 0.8;
+}
+
+.carteExpiry {
+  font-size: 11px;
+  opacity: 0.6;
+  margin: 0;
+}
+
+/* OPTIONS */
+.optionsList {
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.optionGroup {
+  background: linear-gradient(135deg, #0d1a6e, #071040);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.optionGroupTitle {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.4);
+  padding: 12px 15px 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: white;
+  padding: 14px 15px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.option:last-child { border-bottom: none; }
+.option:hover { background: rgba(255,255,255,0.05); }
+
+.optionIcon { font-size: 18px; flex-shrink: 0; }
+
+.optionLabel {
+  flex: 1;
+  font-size: 13px;
+}
+
+.optionArrow {
+  color: rgba(255,255,255,0.3);
+  font-size: 20px;
+}
+
+/* LOGOUT */
+.logoutBtn {
+  width: 100%;
+  background: rgba(222, 50, 50, 0.12);
+  border: 1px solid rgba(222, 50, 50, 0.3);
+  color: #f05555;
+  padding: 15px;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: background 0.2s;
+}
+
+.logoutBtn:hover { background: rgba(222, 50, 50, 0.2); }
+
+@media (min-width: 768px) {
+  .mainMenu { max-width: 500px; margin: 0 auto; grid-template-columns: repeat(3, 1fr); }
+  .mainMenu .menuBtn:last-child { grid-column: auto; }
+  .carteSection { max-width: 400px; }
+  .optionsList { max-width: 700px; margin: 0 auto; }
+}

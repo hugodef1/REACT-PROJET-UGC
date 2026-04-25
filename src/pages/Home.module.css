@@ -63,11 +63,14 @@
 
 .carouselCard {
   position: relative;
-  flex: 0 0 140px; /* Force la largeur des cartes du carrousel */
+  flex: 0 0 130px;
   border-radius: 12px;
   overflow: hidden;
   aspect-ratio: 2 / 3;
+  cursor: pointer;
 }
+
+.carouselCard:active { transform: scale(0.97); }
 
 /* --- FILTRES --- */
 .categoryFilters {

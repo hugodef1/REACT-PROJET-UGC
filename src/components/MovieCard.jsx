@@ -1,16 +1,21 @@
+import { useNavigate } from 'react-router-dom';
 import styles from './MovieCard.module.css';
 
-function MovieCard({ image, badge, showHeart }) {
+function MovieCard({ image, badge, showHeart, filmId }) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (filmId) navigate(`/film/${filmId}`);
+  };
+
   return (
-    <div className={styles.card}>
+    <div className={styles.card} onClick={handleClick} style={{ cursor: filmId ? 'pointer' : 'default' }}>
       <img src={image} alt="Affiche du film" className={styles.poster} />
       
-      {/* Si un badge est fourni, on l'affiche */}
       {badge && (
         <div className={styles.badge}>{badge}</div>
       )}
 
-      {/* Si showHeart est vrai, on affiche le coeur */}
       {showHeart && (
         <div className={styles.heart}>🤍</div>
       )}

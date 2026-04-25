@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './Navbar.module.css';
 
-// Imports des images et icônes (assure-toi d'avoir ces fichiers dans src/assets)
 import logoUgcImg from '../assets/logoUGC.png';
 import filmsIcon from '../assets/films.png';
 import cinemasIcon from '../assets/cinemas.png';
@@ -9,21 +8,19 @@ import resasIcon from '../assets/mesresas.png';
 import compteIcon from '../assets/compte.png';
 
 function Navbar() {
+  const activeStyle = { color: '#1cb3de' };
+
   return (
     <>
-      {/* =======================================
-          VERSION ORDINATEUR (Barre en haut) 
-      ======================================= */}
+      {/* VERSION ORDINATEUR */}
       <header className={styles.desktopNavbar}>
         
-        {/* LOGO */}
         <div className={styles.logoContainer}>
-          <Link to="/">
+          <NavLink to="/">
             <img src={logoUgcImg} alt="Logo UGC" className={styles.logoImage} />
-          </Link>
+          </NavLink>
         </div>
 
-        {/* BARRE DE RECHERCHE */}
         <div className={styles.searchContainer}>
           <div className={styles.searchBar}>
             <span className={styles.searchIcon}>🔍</span>
@@ -35,59 +32,55 @@ function Navbar() {
           </div>
         </div>
 
-        {/* MENU NAVIGATION */}
         <nav className={styles.navMenu}>
-          <Link to="/films" className={styles.navItem}>
+          <NavLink to="/films" className={styles.navItem} style={({ isActive }) => isActive ? activeStyle : {}}>
             <img src={filmsIcon} alt="Films" className={styles.iconImage} />
             <span>FILMS</span>
-          </Link>
-          <Link to="/cinemas" className={styles.navItem}>
+          </NavLink>
+          <NavLink to="/cinemas" className={styles.navItem} style={({ isActive }) => isActive ? activeStyle : {}}>
             <img src={cinemasIcon} alt="Cinémas" className={styles.iconImage} />
             <span>CINÉMAS</span>
-          </Link>
-          <Link to="/reservations" className={styles.navItem}>
+          </NavLink>
+          <NavLink to="/reservations" className={styles.navItem} style={({ isActive }) => isActive ? activeStyle : {}}>
             <img src={resasIcon} alt="Mes Résas" className={styles.iconImage} />
             <span>MES RÉSAS</span>
-          </Link>
-          <Link to="/compte" className={styles.navItem}>
+          </NavLink>
+          <NavLink to="/compte" className={styles.navItem} style={({ isActive }) => isActive ? activeStyle : {}}>
             <img src={compteIcon} alt="Compte" className={styles.iconImage} />
             <span>COMPTE</span>
-          </Link>
+          </NavLink>
         </nav>
       </header>
 
-
-      {/* =======================================
-          VERSION MOBILE (Barre app en bas) 
-      ======================================= */}
+      {/* VERSION MOBILE (Barre en bas) */}
       <nav className={styles.mobileNavbar}>
         
-        <Link to="/films" className={styles.mobileNavItem}>
+        <NavLink to="/films" className={styles.mobileNavItem} style={({ isActive }) => isActive ? activeStyle : {}}>
           <img src={filmsIcon} alt="Films" />
           <span>FILMS</span>
-        </Link>
+        </NavLink>
         
-        <Link to="/cinemas" className={styles.mobileNavItem}>
+        <NavLink to="/cinemas" className={styles.mobileNavItem} style={({ isActive }) => isActive ? activeStyle : {}}>
           <img src={cinemasIcon} alt="Cinémas" />
           <span>CINÉMAS</span>
-        </Link>
+        </NavLink>
         
-        {/* BOUTON RECHERCHE CENTRAL (Style Squircle) */}
+        {/* BOUTON RECHERCHE CENTRAL */}
         <div className={styles.mobileSearchWrapper}>
           <button className={styles.mobileSearchBtn}>
             <span className={styles.searchIconMobile}>🔍</span>
           </button>
         </div>
 
-        <Link to="/reservations" className={styles.mobileNavItem}>
+        <NavLink to="/reservations" className={styles.mobileNavItem} style={({ isActive }) => isActive ? activeStyle : {}}>
           <img src={resasIcon} alt="Résas" />
           <span>MES RÉSAS</span>
-        </Link>
+        </NavLink>
         
-        <Link to="/compte" className={styles.mobileNavItem}>
+        <NavLink to="/compte" className={styles.mobileNavItem} style={({ isActive }) => isActive ? activeStyle : {}}>
           <img src={compteIcon} alt="Compte" />
           <span>COMPTE</span>
-        </Link>
+        </NavLink>
         
       </nav>
     </>
