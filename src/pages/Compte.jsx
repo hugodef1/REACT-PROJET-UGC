@@ -1,57 +1,72 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './Compte.module.css';
+import MovieCard from '../components/MovieCard';
 
 function Compte() {
-  // Cette variable gère ce qu'on affiche : 'accueil' par défaut, ou 'watchlist'
+  // Bidouille pour faire deux pages en une : 'accueil' ou 'watchlist'
   const [vueActuelle, setVueActuelle] = useState('accueil');
+  const [watchlist, setWatchlist] = useState([]);
 
-  // Tes films factices pour la watchlist (Images TMDB)
-  const watchlistFilms = [
-    { id: 1, image: "https://image.tmdb.org/t/p/w500/m1bO3V6N2y1f1m0G1s1rL6bX1Y1.jpg" }, // L'Amour Ouf
-    { id: 2, image: "https://image.tmdb.org/t/p/w500/4ucLGcCN4X120H1Q0Fz3Dpx3F6.jpg" }, // Exorcist
-    { id: 3, image: "https://image.tmdb.org/t/p/w500/udDclJoHjfpt8o11B1y0y2yQx6.jpg" }, // Joker
-    { id: 4, image: "https://image.tmdb.org/t/p/w500/jRXYjXNq0Cs2TcJjLkki24MLp7u.jpg" }, // Avatar
-  ];
+  // Récupère les données enregistrées par FilmDetail.jsx
+  useEffect(() => {
+    const savedMovies = JSON.parse(localStorage.getItem('ugc_watchlist') || '[]');
+    setWatchlist(savedMovies);
+  }, [vueActuelle]); // On recharge à chaque fois qu'on ouvre l'onglet
+
+  // Fonction pour enlever un film directement depuis la liste
+  const removeFromWatchlist = (idToRemove) => {
+    const updatedList = watchlist.filter(film => film.id !== idToRemove);
+    setWatchlist(updatedList);
+    localStorage.setItem('ugc_watchlist', JSON.stringify(updatedList)); // maj du localstorage
+  };
 
   // ==========================================
-  // VUE 2 : LA WATCHLIST
+  // VUE 2 : LA WATCHLIST DYNAMIQUE
   // ==========================================
   if (vueActuelle === 'watchlist') {
     return (
       <div className={styles.compteContainer}>
-        {/* En-tête avec bouton retour */}
+        
         <div className={styles.headerWatchlist}>
           <button className={styles.backBtn} onClick={() => setVueActuelle('accueil')}>
             ⬅️
           </button>
         </div>
 
-        {/* Le gros bouton "Mes films à voir" */}
         <div className={styles.filterContainer}>
           <div className={styles.filterPill}>
             <div className={styles.pillLeft}>
               <span>👁️</span> MES FILMS À VOIR
             </div>
-            <span className={styles.pillCount}>{watchlistFilms.length}</span>
+            {/* Affiche le vrai nombre de films ! */}
+            <span className={styles.pillCount}>{watchlist.length}</span>
           </div>
         </div>
 
-        {/* La grille de la watchlist */}
         <div className={styles.moviesGrid}>
-          {watchlistFilms.map((film) => (
-            <div key={film.id} className={styles.movieCard}>
-              <img src={film.image} alt="Affiche" className={styles.poster} />
-              {/* Le petit bouton rouge pour supprimer de la liste */}
-              <button className={styles.removeBtn}>➖</button>
-            </div>
-          ))}
+          {watchlist.length === 0 ? (
+            <p style={{textAlign: "center", width: "100%", gridColumn: "span 2"}}>
+              Ta watchlist est vide. Va ajouter des films !
+            </p>
+          ) : (
+            watchlist.map((film) => (
+              <MovieCard 
+                key={film.id} 
+                id={film.id}
+                image={`https://image.tmdb.org/t/p/w500${film.poster_path}`} 
+                showHeart={false} 
+                onRemove={removeFromWatchlist} // On passe la fonction de suppression
+              />
+            ))
+          )}
         </div>
+
       </div>
     );
   }
 
   // ==========================================
-  // VUE 1 : L'ACCUEIL DU COMPTE (Par défaut)
+  // VUE 1 : MENU DU COMPTE
   // ==========================================
   return (
     <div className={styles.compteContainer}>
@@ -64,13 +79,12 @@ function Compte() {
       <h2 className={styles.sectionSubtitle}>MES FILMS</h2>
 
       <div className={styles.actionGrid}>
-        
         <button className={styles.actionCard}>
           <span className={styles.cardIcon}>⭐</span>
           <span className={styles.cardText}>FILMS A NOTER</span>
         </button>
 
-        {/* Le clic sur ce bouton change la vue vers la watchlist ! */}
+        {/* Clic pour switch sur la vue watchlist */}
         <button className={styles.actionCard} onClick={() => setVueActuelle('watchlist')}>
           <span className={styles.cardIcon}>👁️</span>
           <span className={styles.cardText}>MA WATCHLIST</span>
@@ -79,7 +93,6 @@ function Compte() {
         <button className={`${styles.actionCard} ${styles.fullWidth}`}>
           <span className={styles.cardText}>MA COLLECTION<br/>UGC</span>
         </button>
-
       </div>
 
     </div>

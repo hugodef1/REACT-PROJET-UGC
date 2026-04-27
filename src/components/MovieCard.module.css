@@ -2,14 +2,14 @@
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-  aspect-ratio: 2 / 3; /* Le format parfait d'une affiche de cinéma */
+  aspect-ratio: 2 / 3;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .card:hover {
-  transform: scale(1.03); /* Petit effet au survol sur ordi */
+  transform: scale(1.03);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -20,24 +20,22 @@
   display: block;
 }
 
-/* Le badge "UGC AIME" / "ANCIEN" */
 .badge {
   position: absolute;
   top: 12px;
   left: 0;
   background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(8px); /* L'effet verre dépoli */
+  backdrop-filter: blur(8px);
   color: white;
   font-size: 11px;
   font-weight: 800;
   padding: 5px 12px;
-  border-radius: 0 12px 12px 0; /* Arrondi seulement à droite */
+  border-radius: 0 12px 12px 0;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-left: none;
   text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
-/* Le petit coeur en haut à droite */
 .heart {
   position: absolute;
   top: 10px;
@@ -45,4 +43,23 @@
   font-size: 20px;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
   z-index: 10;
+}
+
+/* Le bouton moins de la watchlist */
+.removeBtn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fb2c36;
+  font-size: 12px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 15;
 }
