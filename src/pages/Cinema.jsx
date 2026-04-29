@@ -81,10 +81,10 @@ function Cinema() {
 
   const filters = ["Tous", "IMAX", "Dolby Atmos", "4DX"];
 
-  // 3. LOGIQUE DE FILTRAGE
+
   const filteredCinemas = cinemasList.filter(cinema => {
-    if (activeFilter === "Tous") return true; // On affiche tout
-    return cinema.formats.includes(activeFilter); // On vérifie si le format est dans le tableau du cinéma
+    if (activeFilter === "Tous") return true; 
+    return cinema.formats.includes(activeFilter); 
   });
 
   return (
@@ -94,14 +94,12 @@ function Cinema() {
         <p>Trouvez le cinéma UGC le plus proche de vous</p>
       </div>
 
-      {/* BARRE DE FILTRES */}
+      /* Filtres */
       <div className={styles.filtersRow}>
         {filters.map((filter, index) => (
           <button 
             key={index} 
-            // 4. On change le filtre au clic
             onClick={() => setActiveFilter(filter)}
-            // 5. On change la classe CSS si le bouton est actif
             className={`${styles.filterBtn} ${activeFilter === filter ? styles.activeFilter : ''}`}
           >
             {filter}
@@ -109,7 +107,7 @@ function Cinema() {
         ))}
       </div>
 
-      {/* LISTE DES CINÉMAS (On utilise la liste filtrée !) */}
+      
       <div className={styles.cinemasList}>
         {filteredCinemas.map((cinema) => (
           <div key={cinema.id} className={styles.cinemaCard}>
@@ -128,17 +126,12 @@ function Cinema() {
               </div>
             </div>
             <div className={styles.cardActions}>
-              {/* 1. HORAIRES : Affiche une fausse alerte */}
               <button onClick={() => alert(`Les horaires pour ${cinema.name} seront bientôt disponibles !`)}>
                 🕒 Horaires
               </button>
-              
-              {/* 2. APPELER : Lance l'appli téléphone (tel:) */}
               <button onClick={() => window.location.href = "tel:0892700000"}>
                 📞 Appeler
               </button>
-              
-              {/* 3. ITINÉRAIRE : Ouvre Google Maps avec l'adresse précise du cinéma */}
               <button onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cinema.name + " " + cinema.address)}`, '_blank')}>
                 🗺️ Itinéraire
               </button>
