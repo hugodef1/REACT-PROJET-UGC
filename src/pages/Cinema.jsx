@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from './Cinema.module.css';
-import { Link } from 'react-router-dom';
+import CinemaCard from '../components/CinemaCard';
+
 import imgHalles from '../assets/halles.png.jpg';
 import imgBercy from '../assets/bercy.jpg';
 import imgLaDefense from '../assets/ladefense.jpg';
@@ -10,6 +11,7 @@ import imgLille from '../assets/lille.jpg';
 
 function Cinema() {
   const [activeFilter, setActiveFilter] = useState("Tous");
+  
   const cinemasList = [
     {
       id: 1,
@@ -81,7 +83,6 @@ function Cinema() {
 
   const filters = ["Tous", "IMAX", "Dolby Atmos", "4DX"];
 
-
   const filteredCinemas = cinemasList.filter(cinema => {
     if (activeFilter === "Tous") return true; 
     return cinema.formats.includes(activeFilter); 
@@ -107,36 +108,9 @@ function Cinema() {
         ))}
       </div>
 
-      
       <div className={styles.cinemasList}>
         {filteredCinemas.map((cinema) => (
-          <div key={cinema.id} className={styles.cinemaCard}>
-            <div className={styles.cardTop}>
-              <img src={cinema.image} alt={cinema.name} className={styles.cinemaImage} />
-              <div className={styles.cinemaInfo}>
-                <div className={styles.titleRow}>
-                  <h2>{cinema.name}</h2>
-                  <span className={styles.statusBadge}>{cinema.status}</span>
-                </div>
-                <div className={styles.formatsRow}>
-                  {cinema.formats.map((format, idx) => (
-                    <span key={idx} className={styles.formatBadge}>{format}</span>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className={styles.cardActions}>
-              <button onClick={() => alert(`Les horaires pour ${cinema.name} seront bientôt disponibles !`)}>
-                🕒 Horaires
-              </button>
-              <button onClick={() => window.location.href = "tel:0892700000"}>
-                📞 Appeler
-              </button>
-              <button onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cinema.name + " " + cinema.address)}`, '_blank')}>
-                🗺️ Itinéraire
-              </button>
-            </div>
-          </div>
+          <CinemaCard key={cinema.id} cinema={cinema} />
         ))}
       </div>
     </div>
