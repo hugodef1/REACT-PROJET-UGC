@@ -94,7 +94,7 @@ function Cinema() {
         <p>Trouvez le cinéma UGC le plus proche de vous</p>
       </div>
 
-      /* Filtres */
+      {/* Filtres */}
       <div className={styles.filtersRow}>
         {filters.map((filter, index) => (
           <button 
