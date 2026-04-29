@@ -1,4 +1,4 @@
-import { useState } from 'react'; // 1. On importe le State
+import { useState } from 'react';
 import styles from './Cinema.module.css';
 import { Link } from 'react-router-dom';
 import imgHalles from '../assets/halles.png.jpg';
