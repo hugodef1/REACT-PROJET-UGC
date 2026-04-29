@@ -1,7 +1,7 @@
 import styles from './ReservationCard.module.css';
 
 function ReservationCard({ title, date, cinema, seats, format, status, image }) {
-  // Petite logique pour changer la couleur du statut selon s'il est confirmé ou en attente
+  // Changer la couleur du statut selon s'il est confirmé ou en attente
   const isConfirmed = status === "CONFIRMÉ";
 
   return (

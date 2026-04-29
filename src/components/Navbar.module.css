@@ -1,6 +1,4 @@
-/* =========================================
-   VERSION ORDINATEUR (TOP NAVBAR)
-========================================= */
+/* VERSION ORDINATEUR */
 .desktopNavbar {
   display: flex;
   align-items: center;
@@ -92,9 +90,7 @@
 }
 
 
-/* =========================================
-   VERSION MOBILE (BOTTOM NAVBAR PREMIUM)
-========================================= */
+/* VERSION MOBILE */
 @media (max-width: 768px) {
   
   /* On cache la barre du haut sur mobile */

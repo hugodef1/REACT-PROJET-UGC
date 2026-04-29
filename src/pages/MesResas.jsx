@@ -1,5 +1,7 @@
 import styles from './MesResas.module.css';
 import ReservationCard from '../components/ReservationCard';
+import inceptionImage from '../assets/inception.jpg';
+import interstellarImage from '../assets/Interstellar.jpg'
 
 function MesResas() {
   const reservations = [
@@ -11,7 +13,7 @@ function MesResas() {
       seats: "2 place(s) - E7, E8",
       format: "IMAX",
       status: "CONFIRMÉ",
-      image: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg" // Affiche TMDB
+      image: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg"
     },
     {
       id: 2,
@@ -21,7 +23,7 @@ function MesResas() {
       seats: "1 place(s) - F5",
       format: "3D",
       status: "EN ATTENTE",
-      image: "https://image.tmdb.org/t/p/w500/edv5CZvWj09upOsy2Y6IwObsVNl.jpg" // Affiche TMDB
+      image: inceptionImage
     },
     {
       id: 3,
@@ -31,7 +33,7 @@ function MesResas() {
       seats: "3 place(s) - G10, G11, G12",
       format: "IMAX",
       status: "CONFIRMÉ",
-      image: "https://image.tmdb.org/t/p/w500/gEU2QlsEOWepjpB2pX7Hpwv92vS.jpg" // Affiche TMDB
+      image: interstellarImage
     }
   ];
 

@@ -20,9 +20,7 @@ function Compte() {
     localStorage.setItem('ugc_watchlist', JSON.stringify(updatedList)); // maj du localstorage
   };
 
-  // ==========================================
   // VUE 2 : LA WATCHLIST DYNAMIQUE
-  // ==========================================
   if (vueActuelle === 'watchlist') {
     return (
       <div className={styles.compteContainer}>
