@@ -8,7 +8,6 @@ function Home() {
   // Récupération des films au lancement de la page
   useEffect(() => {
     const url = 'https://api.themoviedb.org/3/movie/now_playing?api_key=919f5085685a29d7fdea8d1652969af7&language=fr-FR&region=FR';
-
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -40,7 +39,6 @@ function Home() {
       
       <div className={styles.moviesGrid}>
         {films.map((film) => {
-          // TMDB donne juste la fin du lien de l'image
           const imageUrl = `https://image.tmdb.org/t/p/w500${film.poster_path}`;
 
           return (

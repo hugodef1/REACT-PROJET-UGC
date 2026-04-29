@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
 
-// Imports des images et icônes (assure-toi d'avoir ces fichiers dans src/assets)
 import logoUgcImg from '../assets/logoUGC.png';
 import filmsIcon from '../assets/films.png';
 import cinemasIcon from '../assets/cinemas.png';
@@ -11,9 +10,7 @@ import compteIcon from '../assets/compte.png';
 function Navbar() {
   return (
     <>
-      {/* =======================================
-          VERSION ORDINATEUR (Barre en haut) 
-      ======================================= */}
+      {/*VERSION ORDINATEUR */}
       <header className={styles.desktopNavbar}>
         
         {/* LOGO */}
@@ -57,9 +54,7 @@ function Navbar() {
       </header>
 
 
-      {/* =======================================
-          VERSION MOBILE (Barre app en bas) 
-      ======================================= */}
+      {/* VERSION MOBILE */}
       <nav className={styles.mobileNavbar}>
         
         <Link to="" className={styles.mobileNavItem}>
@@ -72,7 +67,7 @@ function Navbar() {
           <span>CINÉMAS</span>
         </Link>
         
-        {/* BOUTON RECHERCHE CENTRAL (Style Squircle) */}
+        {/* BOUTON RECHERCHE CENTRAL */}
         <div className={styles.mobileSearchWrapper}>
           <button className={styles.mobileSearchBtn}>
             <span className={styles.searchIconMobile}>🔍</span>

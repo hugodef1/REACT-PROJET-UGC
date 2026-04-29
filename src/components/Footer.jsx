@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
 
-// On prépare les imports (assure-toi d'avoir ces fichiers dans assets plus tard)
 import logoUgcImg from '../assets/logoUGC.png';
 import facebookIcon from '../assets/facebook.png';
 import instagramIcon from '../assets/instagram.png';
