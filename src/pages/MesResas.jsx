@@ -1,7 +1,7 @@
 import styles from './MesResas.module.css';
 import ReservationCard from '../components/ReservationCard';
 import inceptionImage from '../assets/inception.jpg';
-import interstellarImage from '../assets/Interstellar.jpg'
+import interstellarImage from '../assets/interstellar.jpg'
 
 function MesResas() {
   const reservations = [
